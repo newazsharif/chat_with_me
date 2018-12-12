@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   
   root to: 'home#index'
   get('login', :to => 'session#login')
+  get('get_stock', :to => 'users#get_stock')
 end
