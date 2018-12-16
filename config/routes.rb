@@ -3,5 +3,11 @@ Rails.application.routes.draw do
   
   root to: 'home#index'
   get('login', :to => 'session#login')
+  post('login', :to => 'session#create')
   get('get_stock', :to => 'users#get_stock')
+  delete('login', :to => "session#destroy")
+  post('message', :to => "message#create" )
+  
+  mount ActionCable.server, at: '/cable'
+  
 end

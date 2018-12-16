@@ -6,23 +6,22 @@
 <div class = "ui two column grid">
   <div class = "twelve wide column">
     <div class = "ui fluid raised card chatbox">
-      <div class = "content">
-        <div class="ui  feed">
+      <div class = "content" style = "overflow : auto;">
+        <div class="ui feed" id = "chat-message" >
           <%= render @messages %>
         </div>
       </div>
-      <div class = "extra content">
+      <div class = "extra content" style="min-height: auto !important">
         <div class="ui comments">
-          <form class="ui reply form">
+          <%= form_for(@message,:remote => true, :html => {:class => "ui reply form", :role => "form"},:url => message_path) do |m| %>
             <div class = "field">  
               
-              
               <div class="ui fluid icon input">
-                <input type="text" placeholder="Write here.......">
-                <i class="bordered inverted orange icon edit"></i> 
+                <%= m.text_field(:body,:placeholder => "Write here.......",:id => "chat_text") %>
+                  <%= m.button('<i class="bordered inverted orange icon edit"></i>'.html_safe,:id => "message-submit") %>
               </div>
             </div>
-          </form>
+          <% end %>
         </div>
       </div>
     </div>

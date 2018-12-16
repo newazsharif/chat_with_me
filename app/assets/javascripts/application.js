@@ -20,5 +20,19 @@
 $(document).on('turbolinks:load',function()
 {
   $('.ui.dropdown').dropdown();
+  $(".close.icon").click(function(){
+  $(this).parent().hide();
+  
+  $('#chat_text').on('keydown',function(e)
+  {
+    if(e.keyCode == 13)
+    $("#message-submit").click();
+  });
+  
+  // $(".content").scrollTop($(".content").height());
+  
+});
 
-})
+});
+
+
