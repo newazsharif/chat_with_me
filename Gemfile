@@ -61,5 +61,13 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+
+group :production do
+   # Use postgrace as the database for Active Record
+  gem 'pg', '~> 0.20'
+  #need only for earlier version of rails 5
+  gem 'rails_12factor'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
