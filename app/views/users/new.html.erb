@@ -20,6 +20,13 @@
             <%= f.password_field(:password,:placeholder => "password")%>
           </div>
         </div>
+        <div class="field">
+          <!--<label>password</label>-->
+          <div class="ui left icon input">
+            <i class = "lock icon"></i>
+            <%= f.password_field(:confirm_password,:placeholder => "Confirm Password")%>
+          </div>
+        </div>
         <%= f.submit("Sign Up and Log in",:class => "ui fluid large orange submit button")%>
       </div>
       
