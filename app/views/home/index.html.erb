@@ -6,7 +6,7 @@
 <div class = "ui two column grid">
   <div class = "twelve wide column">
     <div class = "ui fluid raised card chatbox">
-      <div class = "content" style = "overflow : auto;">
+      <div class = "content" style = "overflow : auto; position: relative;">
         <div class="ui feed" id = "chat-message" >
           <%= render @messages %>
         </div>
@@ -17,7 +17,7 @@
             <div class = "field">  
               
               <div class="ui fluid icon input">
-                <%= m.text_field(:body,:placeholder => "Write here.......",:id => "chat_text",:focus => true) %>
+                <%= m.text_field(:body,:placeholder => "Write here.......",:id => "chat_text",:autofocus => true) %>
                   <%= m.button('<i class="bordered inverted orange icon edit"></i>'.html_safe,:id => "message-submit") %>
               </div>
             </div>
@@ -45,3 +45,10 @@
     </div>
   </div>
 </div>
+
+<script>
+  var d = $('.content');
+  d.scrollTop(d.prop("scrollHeight"));
+ 
+ 
+</script>

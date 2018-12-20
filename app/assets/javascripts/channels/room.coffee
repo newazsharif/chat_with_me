@@ -11,7 +11,11 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       $("#chat-message").append('<div class="event"><div class="content"><div class="summary message-summary">'+
                                 '<i>'+ data.username + ' says : </i>'+data.content+ '</div></div></div>')
       $("#chat_text").val("")
-      $(".content").scrollTop($(".content").height());
+      
+      
+      $('.content').scrollTop($('.content').prop("scrollHeight"));
+      
+      
     end
     
     
