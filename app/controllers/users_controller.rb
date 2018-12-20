@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     rescue Exception => e
       
       flash[:error] = e.message
-      render 'new'
+      redirect_to new_users_path
     end
   end
   
