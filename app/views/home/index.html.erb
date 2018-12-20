@@ -17,7 +17,7 @@
             <div class = "field">  
               
               <div class="ui fluid icon input">
-                <%= m.text_field(:body,:placeholder => "Write here.......",:id => "chat_text") %>
+                <%= m.text_field(:body,:placeholder => "Write here.......",:id => "chat_text",:focus => true) %>
                   <%= m.button('<i class="bordered inverted orange icon edit"></i>'.html_safe,:id => "message-submit") %>
               </div>
             </div>
