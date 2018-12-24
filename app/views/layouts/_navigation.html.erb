@@ -2,9 +2,10 @@
       <div class = "ui container">
         <% if logged_in? %>
           <%= link_to("Chatroom",root_path,:class => "item") %>
-          <a class="item">
-            Messages
-          </a>
+          
+          <%= link_to("Private Chat",user_chat_index_path(current_user),:class => "item") %>
+            
+          
         <% end %>
           <div class="right menu">
           <% if logged_in? %>
