@@ -1,0 +1,20 @@
+<div class = "ui grid">
+  
+  <div class = "eight wide column">
+    <h2 class="ui header">All Users</h2>
+    </hr>
+      <div class="ui  list">
+        <%= render(:partial => 'user_list',:collection =>  User.all, :as => :user) %>
+      </div>
+  </div>
+  
+  <div class = "eight wide column">
+    <h2 class="ui header">Friends</h2>
+    </hr>
+      <div class="ui list">
+        <%= render(:partial => 'user_list',:collection =>  @other_chat_users, :as => :user) %>
+      </div>
+  </div>
+ 
+</div>
+

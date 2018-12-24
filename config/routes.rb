@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get('get_stock', :to => 'users#get_stock')
   delete('login', :to => "session#destroy")
   post('message', :to => "message#create" )
-  resource('users')
+  
+  resources('users') do 
+    resources('chat')
+  end
+  
   mount ActionCable.server, at: '/cable'
   
 end

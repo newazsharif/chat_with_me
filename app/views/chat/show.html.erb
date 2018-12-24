@@ -1,0 +1,41 @@
+<%= content_for(:head_attributes) do %>data-chat-id="<%= @chat.id %>"<% end %>
+<h2 class="ui center aligned icon header">
+  <i class="circular orange coffee icon"></i>
+  Chat with <%= @other_user.username %>
+</h2>
+
+<div class = "ui two column grid">
+  <div class = "twelve wide column">
+    <div class = "ui fluid raised card chatbox">
+      <div class = "content" style = "overflow : auto; position: relative;">
+        <% if @chat.messages.any? %>
+          <div class="ui feed" id = "chat-message" >
+            <%= render(:partial => '/messages/message', :collection => @chat.messages, :as => :message) %>
+          </div>
+        <% end %>
+      </div>
+      <div class = "extra content" style="min-height: auto !important">
+        <div class="ui comments">
+          <%= form_for(@message,:remote => true, :html => {:class => "ui reply form", :role => "form"},:url => message_path) do |m| %>
+            <div class = "field">  
+              
+              <div class="ui fluid icon input">
+                <%= m.text_field(:body,:placeholder => "Write here.......",:id => "chat_text",:autofocus => true) %>
+                  <%= m.button('<i class="bordered inverted orange icon edit"></i>'.html_safe,:id => "message-submit") %>
+              </div>
+            </div>
+            <%= m.hidden_field :chat_id ,:value => @chat.id %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  
+  var d = $('.content');
+  d.scrollTop(d.prop("scrollHeight"));
+</script>
+  

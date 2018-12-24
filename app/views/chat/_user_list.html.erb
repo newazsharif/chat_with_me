@@ -1,0 +1,8 @@
+    <% if user != current_user %>
+      <div class="item">
+        <div class="content">
+          <div class="header"><%= link_to(user.username,user_chat_index_path(current_user,:other_user => user.id),:method => 'post') %></div>
+        </div>
+      </div>
+    <% end %>
+    

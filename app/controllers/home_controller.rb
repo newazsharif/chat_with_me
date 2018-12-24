@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action(:require_login)
   
   def index
-    @messages = Message.all
+    @messages = Message.where(:chat_id => nil)
     @message = Message.new
   end
   

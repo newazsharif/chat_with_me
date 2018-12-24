@@ -30,7 +30,7 @@ $(document).on('turbolinks:load',function()
   });
   
   // $(".content").scrollTop($(".content").height());
-  
+  var chat_id = $("#message_chat_id").val()
 });
 
 });
